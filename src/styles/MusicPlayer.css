@@ -1,0 +1,67 @@
+.music-player {
+  opacity: 0.75;
+  text-align: center;
+  position: relative;
+}
+
+.track-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0px;
+  margin: 0;
+  /* padding: 10px 0; */
+  background: rgb(0, 0, 15);
+  color: rgb(190, 190, 190);
+  font-size: 1.2em;
+  z-index: 10;
+}
+
+.time-info {
+  opacity: 0.75;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 260px;
+  margin: 0;
+  /* padding: 10px 0; */
+  background: rgb(0, 0, 15);
+  color: rgb(190, 190, 190);
+  font-size: 1em;
+  z-index: 10;
+}
+
+.hidden-audio-player .rhap_main {
+  display: none;
+}
+
+.rhap_play-pause-button {
+  display: none !important;
+}
+
+/* Hide all main sections of the player */
+.rhap_container,
+.rhap_progress-section,
+.rhap_controls-section,
+.rhap_volume-controls,
+.rhap_additional-controls {
+  display: none !important;
+}
+
+/* Hide specific elements that might be causing the bar */
+.rhap_progress-bar,
+.rhap_progress-indicator,
+.rhap_progress-filled,
+.rhap_progress-container,
+.rhap_download-progress,
+.rhap_time {
+  display: none !important;
+}
+
+/* Reset any background colors that might be visible */
+.rhap_container,
+.rhap_progress-bar,
+.rhap_progress-filled,
+.rhap_progress-container {
+  background-color: transparent !important;
+}

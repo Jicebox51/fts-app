@@ -1,0 +1,330 @@
+.body {
+  background-color: black;
+  background-image: url('../../public/background/background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.innerContainer {
+  display: flex;
+  flex: 1;
+}
+
+.leftColumn, .centerColumn, .rightColumn {
+  height: 775px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.leftColumn {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  width: 255px;
+  box-sizing: border-box;
+}
+
+.leftColumn.visible {
+  opacity: 1;
+  width: 255px;
+  box-sizing: border-box;
+  /* background-color: #00ff00; */
+}
+
+.leftContent {
+  opacity: 1;
+  height: calc(100% - 10px);  
+  width: calc(100% - 20px);
+  margin: 25px;
+  margin-top: 0;
+  /* background-color: rgb(0, 1, 70); */
+  box-sizing: border-box;
+}
+
+.rightColumn {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  width: 255px;
+  box-sizing: border-box;
+}
+
+.rightColumn.visible {
+  opacity: 1;
+  width: 255px;
+  box-sizing: border-box;
+  /* background-color: #00ff00; */
+}
+
+.rightContent {
+  opacity: 1;
+  height: calc(100% - 10px);  
+  width: calc(100% - 20px);
+  /* margin: 10px; */
+  margin-top: 0;
+  background-color: rgb(0, 1, 70);
+  box-sizing: border-box;
+}
+
+.centerColumn {
+  flex: 1;
+  width: calc(100% - 510px);
+  box-sizing: border-box;
+  /* background-color: brown; */
+}
+
+.centerContent {
+  opacity: 1;
+  height: calc(100% - 20px);  
+  width: calc(100% - 20px);
+  margin: 10px;
+  /* background-color: rgb(0, 1, 70); */
+  box-sizing: border-box;
+}
+
+.bottomRow {
+  width: 100%;
+  height: 285px;
+  /* min-height: 265px; */
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  box-sizing: border-box;
+  /* background-color: rgb(255, 251, 0); */
+}
+
+.bottomRowContent {
+  opacity: 0.85;
+  height: calc(100% - 10px);  
+  width: calc(100% - 20px);
+  margin: 10px;
+  margin-top: 0;
+  /* background-color: rgb(0, 1, 70); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.column {
+  height: 100%; /* Ensure each column takes full height of .bottomRowContent */
+  width: auto;
+  flex-shrink: 0; /* Prevent columns from shrinking */
+  opacity: 0;
+  transition: opacity 1.5 ease-in-out; /* Smooth transition for opacity changes */
+}
+
+/* Hide columns when not visible */
+.column.visible {
+  opacity: 1;
+}
+
+.slideshow {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow.visible {
+  opacity: 1;
+}
+
+.webcamContainer {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  width: 445px;
+  height: 100%;
+  overflow: hidden; /* Ensure content is clipped to the container */
+  position: relative; /* Position for the sliding effect */
+  box-sizing: border-box;
+}
+
+.webcamContainer.visible {
+  opacity: 1;
+  /* width: 445px;
+  height: 255px; */
+  overflow: hidden; /* Ensure content is clipped to the container */
+  position: relative; /* Position for the sliding effect */
+  box-sizing: border-box;
+  /* background-color: black; */
+}
+
+.webcamContainer video {
+  width: 100%; /* Ensures the video fills the container */
+  height: 100%; /* Ensures the video fills the container */
+  object-fit: contain; /* Scales the video to maintain aspect ratio */
+  box-sizing: border-box;
+}
+
+.main-webcam, .alt-webcam {
+  transition: opacity 2.5s ease-in-out;
+}
+
+.main-webcam {
+  width: 100%;
+  height: 100%;
+}
+
+.alt-webcam {
+  width: 100%; /* Ensures the video fills the container */
+  height: 100%; /* Ensures the video fills the container */
+  object-fit: contain; /* Scales the video to maintain aspect ratio */
+  box-sizing: border-box;
+}
+
+/* Align content in left and right columns */
+.leftColumn ul,
+.rightColumn ul {
+  color: #ffffff;
+  margin-left: 15px;
+  text-align: left;
+  padding-inline-start: 0px;
+}
+
+.rightColumn li {
+  font-size: 1.015em;
+  margin-bottom: 3px;
+}
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('../../public/fonts/digital-7_mono.ttf') format('truetype');
+}
+
+.sensorContainer {
+  display: flex;
+  width: 170px;
+  flex-direction: row;
+  align-items: left;
+}
+
+.sensorColumn {
+  flex: 1;
+}
+
+.sensorTitle {
+  color: #ffffff;
+  text-align: left;
+  opacity: 0.3;
+}
+
+.sensorTitle h2 {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.sensorTitle span {
+  color: #ffffff;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.scoreboardItem {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.temperature-display {
+  opacity: 1;
+  font-family: 'Digital-7', sans-serif;
+  font-size: 2.75em;
+}
+
+.usernameDisplay {
+  color: #ffffff;
+  width: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  opacity: 1;
+  font-family: 'Digital-7', sans-serif;
+  font-size: 2.6em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.usernameContainer {
+  color: #ffffff;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  color: #ffffff;
+  width: auto;
+  overflow: hidden;
+  animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.segmented-digit {
+  display: inline-block;
+  opacity: 1;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.blue-color {
+  color: blue;
+  transition: color 0.5s;
+  opacity: 1;
+}
+
+.orange-color {
+  color: orange;
+  transition: color 0.5s;
+  opacity: 1;
+}
+
+.red-color {
+  color: red;
+  transition: color 0.5s;
+  opacity: 1;
+}
+
+.green-color {
+  color: #00ff00;
+  transition: color 0.5s;
+  opacity: 1;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
